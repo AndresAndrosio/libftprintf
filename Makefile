@@ -1,5 +1,4 @@
 NAME = libftprintf.a
-NAME_PROG = libft_test
 
 CC = cc
 CFLAGS = -g -Wall -Wextra -Werror
@@ -26,20 +25,14 @@ $(NAME): build_libft $(OBJS)
 build_libft:
 	$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME_PROG): $(MAIN_LOCATION) $(NAME)
-	$(CC) $(CFLAGS) -I. $(MAIN_LOCATION) $(NAME) -o $(NAME_PROG)
-
 clean:
 	$(RM) $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
-	$(RM) $(NAME) $(NAME_PROG)
+	$(RM) $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
-
-run: all $(NAME_PROG) 
-	./$(NAME_PROG)
 
 .PHONY: all clean fclean re run build_libft
