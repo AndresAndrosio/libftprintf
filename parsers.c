@@ -6,7 +6,7 @@
 /*   By: arozados <arozados@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 14:58:32 by arozados          #+#    #+#             */
-/*   Updated: 2026/10/27 14:59:10 by arozados         ###   ########.fr       */
+/*   Updated: 2026/10/29 09:11:28 by arozados         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ size_t	ft_itoa_and_print(int num)
 	num_str = ft_itoa(num);
 	len = ft_strlen(num_str);
 	write(1, num_str, len);
+	free(num_str);
+	num_str = NULL;
 	return (len);
 }
 
